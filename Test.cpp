@@ -77,14 +77,14 @@ int main() {
 	
 		testcase.setname("OUR Play with dummy choosers and guessers - right lenght")
 		.CHECK_EQUAL(play(c123, g123, 3, 100), 1)      // guesser wins in one turn.
-		.CHECK_EQUAL(play(c8888, g8888, 4, 100), 101)   
+		.CHECK_EQUAL(play(c8888, g8888, 4, 100), 1)   
 		.CHECK_EQUAL(play(c12, g21, 2, 100), 101)   
-		.CHECK_EQUAL(play(c2324, g3242, 4, 100), 65)    
+		.CHECK_EQUAL(play(c2324, g3242, 4, 100), 101)    
 		;
 		testcase.setname("OUR Play with dummy choosers and guessers - worng lenght")
-		.CHECK_EQUAL(play(c123, g12347, 3, 100), 0)      
-		.CHECK_EQUAL(play(c123456789, g987654321, 4, 100), 1)   
-		.CHECK_EQUAL(play(c12347, g12347, 2, 100), 101)   
+		.CHECK_EQUAL(play(c123, g12347, 3, 100), 101)      
+		.CHECK_EQUAL(play(c123456789, g987654321, 4, 100), 0)   
+		.CHECK_EQUAL(play(c12347, g12347, 2, 100), 0)   
 		.CHECK_EQUAL(play(c2324, g123, 4, 100), 101);
 
 		testcase.setname("OUR Play with smart guesser");

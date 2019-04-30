@@ -12,5 +12,6 @@ void bullpgia::SmartGuesser:: startNewGame(uint length) {
 }
 
 string bullpgia::SmartGuesser:: guess(){
+    
     return "";
 }

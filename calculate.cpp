@@ -2,7 +2,6 @@
 #include"calculate.hpp"
 
 using namespace std;
-using namespace bullpgia;
 
 string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
   string tempguess=guess;
@@ -29,8 +28,6 @@ string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
                   {
                     pgia++;
                     check=false;
-                //            cout << tempguess << "pgia" <<  tempchoice << endl;
-
                   }
                 }   
           }
@@ -38,7 +35,7 @@ string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
           
     
 
-  string cc = to_string(bull)+","+to_string(pgia);
+  string cc = to_string(bull) + "," + to_string(pgia);
  
   return cc;
 }
