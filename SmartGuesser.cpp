@@ -4,11 +4,11 @@
 using namespace std;
 
 void bullpgia::SmartGuesser:: learn(string solutions) {
-    cout << "test learn" << endl;
+    cout <<  endl;
 }
 
 void bullpgia::SmartGuesser:: startNewGame(uint length) {
-    cout << "test start new game" << endl;
+    cout << endl;
 }
 
 string bullpgia::SmartGuesser:: guess(){
