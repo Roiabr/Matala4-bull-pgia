@@ -7,16 +7,20 @@ using namespace bullpgia;
 string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
   string tempguess=guess;
     string tempchoice=choice;
+   // cout<<tempchoice<<"vs"<<tempguess<<endl;
     int bull=0;
     int pgia=0;
     for(size_t i = 0; i < choice.length(); i++)
     {
       if (choice[i]==guess[i]) {
-        bull++;
-        tempguess.erase(i,1);
-        tempchoice.erase(i,1);
+        int index = i-bull;
+        tempguess.erase(index,1);
+        tempchoice.erase(index,1);
+                bull++;
+
        
       }
+
     }
     if(tempchoice.length()>0)
     {
@@ -29,8 +33,6 @@ string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
                   {
                     pgia++;
                     check=false;
-                //            cout << tempguess << "pgia" <<  tempchoice << endl;
-
                   }
                 }   
           }

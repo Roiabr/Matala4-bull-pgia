@@ -22,13 +22,22 @@ namespace bullpgia {
 		uint indexOfTurn;
 		for (indexOfTurn=0; indexOfTurn<maxTurns; ++indexOfTurn) {
 			string guess = guesser.guess();
+			cout<<guess<<endl;
+			cout << "what is the guess :"+guess <<endl;
 			if (guess.length()!=length)  // Illegal guess
 				return TECHNICAL_VICTORY_TO_CHOOSER;
 			if (guess==choice) {
+				auto reply = calculateBullAndPgia(choice, guess);
+							    cout << reply <<"  replay" <<endl;
+
+				cout<<"win"<<endl;
 				return indexOfTurn + 1; 
 			} else {
+
 				auto reply = calculateBullAndPgia(choice, guess);
 				guesser.learn(reply); // tell the guesser how many bull and pgia were in its latest guess
+							    cout << reply <<"  replay" <<endl;
+
 			}
 		}
 		return TECHNICAL_VICTORY_TO_CHOOSER;  // Guesser could not guess in time

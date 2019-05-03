@@ -2,6 +2,7 @@
 #include <string>
 
 // #include "Guesser.hpp"
+#include "calculate.hpp"
 using namespace bullpgia;
 using namespace std;
 
