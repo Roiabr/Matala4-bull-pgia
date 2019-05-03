@@ -29,13 +29,17 @@ int main() {
 		ConstantChooser c1234{"1234"}, c12345{"12345"}, c9999{"9999"};
 		ConstantGuesser g1234{"1234"}, g12345{"12345"}, g9999{"9999"};
 
+<<<<<<< HEAD
 		ConstantChooser c123{"123"}, c12347{"12347"}, c8888{"8888"};
 		ConstantGuesser g123{"123"}, g12347{"12347"}, g8888{"8888"};
+=======
+		
+>>>>>>> 8a78722954468829c0ce5d5f63455c57f98eb94f
 
 		testcase.setname("Calculate bull and pgia")
 		.CHECK_OUTPUT(calculateBullAndPgia("1234","1234"), "4,0")      // 4 bull, 0 pgia
-		.CHECK_OUTPUT(calculateBullAndPgia("1234","4321"), "0,4")      // 0 bull, 4 pgia
-		;
+		.CHECK_OUTPUT(calculateBullAndPgia("1234","4321"), "0,4");     // 0 bull, 4 pgia
+		
 
 		testcase.setname("Play with dummy choosers and guessers")
 		.CHECK_EQUAL(play(c1234, g1234, 4, 100), 1)      // guesser wins in one turn.
@@ -44,21 +48,42 @@ int main() {
 		.CHECK_EQUAL(play(c12345, g1234, 4, 100), 0)     // chooser loses technically by choosing an illegal number (too long).
 		;
 
+<<<<<<< HEAD
  testcase.setname(" own's Calculate bull and pgia")
+=======
+		testcase.setname("Play with smart guesser");
+		RandomChooser randy;
+		SmartGuesser smarty;
+		for (uint i=0; i<100; ++i) 
+		{
+			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=100, true);  // smarty should always win in at most 10 turns!
+		}
+
+		
+		////////////////////OUR TESTS////////////////////////////
+
+		ConstantChooser c123{"123"}, c12347{"12347"},c2324{"2324"}, c8888{"8888"}, c123456789{"123456789"},c12{"12"};
+		ConstantGuesser g123{"123"}, g12347{"12347"},g3242{"3242"}, g8888{"8888"}, g987654321{"987654321"},g21{"21"};
+		
+
+		testcase.setname("OUR Calculate bull and pgia")
+>>>>>>> 8a78722954468829c0ce5d5f63455c57f98eb94f
 		.CHECK_OUTPUT(calculateBullAndPgia("2","2"), "1,0")      // 1 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("3","2"), "0,0")      // 0 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("2","2"), "1,0")      // 1 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("2","2"), "1,0")      // 1 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("24","14"), "1,0")      // 1 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("245","234"), "1,1")      // 1 bull, 1 pgia
-		.CHECK_OUTPUT(calculateBullAndPgia("313","678"), "0,0")      // 0 bull, 0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("313","678"), "0,0")		// 0 bull, 0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("4","26"), "0,0") 		// 0 bull, 0 pgia
+		.CHECK_OUTPUT(calculateBullAndPgia("4444","44"), "2,0")       // 2 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("564","456"), "0,3")      // 0 bull, 3 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("245","245"), "3,0")      // 3 bull, 0 pgia
-	
 		.CHECK_OUTPUT(calculateBullAndPgia("2451","2451"), "4,0")      // 4 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("2213","1234"), "1,2")      // 4 bull, 0 pgia
 		.CHECK_OUTPUT(calculateBullAndPgia("5517","4321"), "0,1")      // 0 bull, 4 pgia
 		;
+<<<<<<< HEAD
 		testcase.setname("Play with smart guesser");
 		RandomChooser randy;
 		SmartGuesser smarty;
@@ -66,9 +91,39 @@ int main() {
 			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=10, true);  // smarty should always win in at most 10 turns!
 		}
 		testcase.setname(" length of choose && guessers")
+=======
+	
+		testcase.setname("OUR Play with dummy choosers and guessers - right lenght")
+		.CHECK_EQUAL(play(c123, g123, 3, 100), 1)      // guesser wins in one turn.
+		.CHECK_EQUAL(play(c8888, g8888, 4, 100), 1)   
+		.CHECK_EQUAL(play(c12, g21, 2, 100), 101)   
+		.CHECK_EQUAL(play(c2324, g3242, 4, 100), 101)    
+		;
+		testcase.setname("OUR Play with dummy choosers and guessers - worng lenght")
+		.CHECK_EQUAL(play(c123, g12347, 3, 100), 101)      
+		.CHECK_EQUAL(play(c123456789, g987654321, 4, 100), 0)   
+		.CHECK_EQUAL(play(c12347, g12347, 2, 100), 0)   
+		.CHECK_EQUAL(play(c2324, g123, 4, 100), 101);
+
+		testcase.setname("OUR Play with smart guesser");
+		RandomChooser OurRandy1;
+		SmartGuesser OurSmarty1;
+		for (uint i=0; i<100; ++i) 
+		{
+			testcase.CHECK_EQUAL(play(OurRandy1, OurSmarty1, 4, 100)<=100, true);  // smarty should always win in at most 10 turns!
+		}
+>>>>>>> 8a78722954468829c0ce5d5f63455c57f98eb94f
+		
+		RandomChooser OurRandy2;
+		SmartGuesser OurSmarty2;
+		for (uint i=0; i<100; ++i) 
+		{
+			testcase.CHECK_EQUAL(play(OurRandy2, OurSmarty2, 5, 100)<=100, true);  // smarty should always win in at most 100 turns!
+		}		
+
 		
 		
-	;
+	
 
     grade = testcase.grade();
 	} else {

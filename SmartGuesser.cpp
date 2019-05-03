@@ -6,6 +6,7 @@
 using namespace std;
  
 void bullpgia::SmartGuesser:: learn(string solutions) {
+<<<<<<< HEAD
      bull=atoi(&solutions[0]);
      pgia=atoi(&solutions[1]);
      vec.push_back(2);
@@ -112,3 +113,16 @@ string bullpgia::SmartGuesser:: guess(){
     
     return "roi bana";
 }
+=======
+    cout <<  endl;
+}
+
+void bullpgia::SmartGuesser:: startNewGame(uint length) {
+    cout << endl;
+}
+
+string bullpgia::SmartGuesser:: guess(){
+    
+    return "";
+}
+>>>>>>> 8a78722954468829c0ce5d5f63455c57f98eb94f

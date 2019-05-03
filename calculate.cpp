@@ -2,7 +2,6 @@
 #include"calculate.hpp"
 
 using namespace std;
-using namespace bullpgia;
 
 string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
   string tempguess=guess;
@@ -13,12 +12,19 @@ string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
     for(size_t i = 0; i < choice.length(); i++)
     {
       if (choice[i]==guess[i]) {
+<<<<<<< HEAD
         int index = i-bull;
         tempguess.erase(index,1);
         tempchoice.erase(index,1);
                 bull++;
 
        
+=======
+        int index = i - bull;
+        tempguess.erase(index,1);
+        tempchoice.erase(index,1);
+        bull++;
+>>>>>>> 8a78722954468829c0ce5d5f63455c57f98eb94f
       }
 
     }
@@ -40,7 +46,7 @@ string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
           
     
 
-  string cc = to_string(bull)+","+to_string(pgia);
+  string cc = to_string(bull) + "," + to_string(pgia);
  
   return cc;
 }

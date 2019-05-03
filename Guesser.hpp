@@ -17,9 +17,10 @@ namespace bullpgia{
     Guesser(const string& str){
       Guess = str;
     }
-    // variabales
+    
     uint length;
-    // functions
+
+    
     virtual void startNewGame(uint length){}
     virtual string guess() = 0;
     virtual void learn(string solutions){}
