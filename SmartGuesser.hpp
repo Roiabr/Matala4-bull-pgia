@@ -10,22 +10,19 @@ namespace bullpgia{
       
 
   class SmartGuesser: public bullpgia::Guesser{
-
     private :
     string Guess;
 
     public :
     uint length;
-
-    int count1;
+    int turns;
     string SmartGuess;
     int iterator;
     int iterator1;
     int bullSol;
-    int pgiaSol;
     int succes;
     int arrGuess[10];
-    bool four=false;
+    bool four;
  
 
     
@@ -34,23 +31,18 @@ namespace bullpgia{
     SmartGuesser(const string& str)
     {
        Guess = str;
-       count1=1;
+       turns=1;
        iterator=0;
        iterator1=0;
        bullSol=0;
-       pgiaSol=0;
        succes = 0;
        SmartGuess = "";
-       
-    
+       four = false;
     }
 
     ///////////methods//////////////////
     void learn(string solutions) override;
     string guess() override;
     void startNewGame(uint length) override;
-
-
-    
   };
 }
