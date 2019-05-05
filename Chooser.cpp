@@ -5,8 +5,9 @@
 
 using namespace std;
 
-string Chooser::choose(uint length){
-  return "";
+string Chooser::choose(uint length)
+{
+  return Choose;
 }
 
 uint Chooser::length(){

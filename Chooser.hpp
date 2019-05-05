@@ -1,4 +1,3 @@
-
 #pragma once
 #include <string>
 
@@ -19,5 +18,6 @@ namespace bullpgia{
     virtual ~Chooser(){}
     virtual string choose(uint length) = 0;
     uint length();
+    
   };
 }

@@ -102,9 +102,6 @@ int main() {
 			testcase.CHECK_EQUAL(play(OurRandy2, OurSmarty2, 5, 100)<=100, true);  // smarty should always win in at most 100 turns!
 		}		
 
-		
-		
-	
 
     grade = testcase.grade();
 	} else {
@@ -113,12 +110,6 @@ int main() {
 	}
 
 	cout << "Your grade is: "  << grade << endl;
-	return 0;
-
-
-	///////////MyTest 
-
-
-		
+	return 0;		
 }
 
