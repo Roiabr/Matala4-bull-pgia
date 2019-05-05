@@ -1,11 +1,14 @@
 #include<iostream>
 #include <vector>
 #include "Guesser.hpp"
+#include<vector>
 
 using namespace std;
 // using namespace bullpgia;
 
 namespace bullpgia{
+      
+
   class SmartGuesser: public bullpgia::Guesser{
 
     private :
@@ -13,6 +16,7 @@ namespace bullpgia{
 
     public :
     uint length;
+
     int count1;
     string SmartGuess;
     int iterator;
@@ -22,8 +26,8 @@ namespace bullpgia{
     int succes;
     int arrGuess[10];
     bool four=false;
+ 
 
-    
     
   /////////counstractors/////////////
     SmartGuesser(){}
@@ -35,7 +39,6 @@ namespace bullpgia{
        iterator1=0;
        bullSol=0;
        pgiaSol=0;
-       
        succes = 0;
        SmartGuess = "";
        
@@ -46,5 +49,8 @@ namespace bullpgia{
     void learn(string solutions) override;
     string guess() override;
     void startNewGame(uint length) override;
+
+
+    
   };
 }

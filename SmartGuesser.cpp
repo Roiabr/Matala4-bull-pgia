@@ -30,7 +30,7 @@ void bullpgia::SmartGuesser:: learn(string solutions)
        }
        else
        {
-                              cout<<"iterator1:"<<iterator1<<"gal"<<endl;
+         cout<<"iterator1:"<<iterator1<<"gal"<<endl;
 
         if(four == true)
             {
@@ -49,7 +49,7 @@ void bullpgia::SmartGuesser:: startNewGame(uint length)
     count1=1;
     iterator1=0;
     succes=1;
-     four=false;
+    four=false;
 }
 
 string bullpgia::SmartGuesser:: guess()
