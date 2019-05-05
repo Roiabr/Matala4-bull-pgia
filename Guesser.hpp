@@ -20,7 +20,7 @@ namespace bullpgia{
     
     uint length;
 
-    virtual void startNewGame(uint length){}
+    virtual void startNewGame(uint length){this->length = length;}
     virtual string guess() = 0;
     virtual void learn(string solutions){}
 

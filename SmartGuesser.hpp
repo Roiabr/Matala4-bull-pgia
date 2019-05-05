@@ -32,7 +32,7 @@ namespace bullpgia{
     SmartGuesser(const string& str)
     {
        Guess = str;
-       count1=1;
+       count1=0;
        iterator=0;
        iterator1=0;
        bullSol=0;

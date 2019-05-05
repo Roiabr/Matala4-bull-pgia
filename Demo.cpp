@@ -24,14 +24,14 @@ int main() {
 	// cout << play(c12345, g1234, 4, 100) << endl;  // prints 0 - chooser loses technically by choosing an illegal number (too long).
 
 	RandomChooser randy;
-	// RandomGuesser guessy;
-	// for (uint i=0; i<100; ++i) {
-	// 	cout << play(randy, guessy, 2, 100) << endl;  // guesser should often win but sometimes lose.
-	// }
+	RandomGuesser guessy;
+	for (uint i=0; i<100; ++i) {
+		cout << play(randy, guessy, 4, 100) << endl;  // guesser should often win but sometimes lose.
+	}
 
-	SmartGuesser smarty;
-	//for (uint i=0; i<100; ++i) {
-		cout << play(randy, smarty, 8, 100) << endl;  // smarty should always win in at most 10 turns!
-	//}
+	// SmartGuesser smarty;
+	// for (uint i=0; i<100; ++i) {
+	// 	cout << play(randy, smarty, 5, 100) << endl;  // smarty should always win in at most 10 turns!
+	// }
 	return 0;
 }

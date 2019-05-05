@@ -79,7 +79,22 @@ int main() {
 		RandomChooser randy;
 		SmartGuesser smarty;
 		for (uint i=0; i<100; ++i) {
-			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100)<=100, true);  // smarty should always win in at most 100 turns!
+			testcase.CHECK_EQUAL(play(randy, smarty, 1, 100)<=100, true);  // smarty should always win in at most 100 turns!
+		}
+		RandomChooser randy2;
+		SmartGuesser smarty2;
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy2, smarty2, 2, 100)<=100, true);  // smarty should always win in at most 100 turns!
+		}
+		RandomChooser randy3;
+		SmartGuesser smarty3;
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy3, smarty3, 3, 100)<=100, true);  // smarty should always win in at most 100 turns!
+		}
+		RandomChooser randy4;
+		SmartGuesser smarty4;
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy4, smarty4, 4, 100)<=100, true);  // smarty should always win in at most 100 turns!
 		}
 		
 		RandomChooser randy1;
@@ -93,12 +108,29 @@ int main() {
 		for (uint i=0; i<100; ++i) {
 			testcase.CHECK_EQUAL(play(randy5, smarty5, 5, 100)<=100, true);  // smarty should always win in at most 100 turns!
 		}
+		RandomChooser randy6;
+		SmartGuesser smarty6;
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy6, smarty6, 6, 100)<=100, true);  // smarty should always win in at most 100 turns!
+		}
+		RandomChooser randy7;
+		SmartGuesser smarty7;
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy7, smarty7, 7, 100)<=100, true);  // smarty should always win in at most 100 turns!
+		}
 		
+		RandomChooser randy8;
+		SmartGuesser smarty8;
+		for (uint i=0; i<100; ++i) {
+			testcase.CHECK_EQUAL(play(randy8, smarty8, 8, 800)<=100, true);  // smarty should always win in at most 100 turns!
+		}
 		RandomChooser randy9;
 		SmartGuesser smarty9;
 		for (uint i=0; i<100; ++i) {
 			testcase.CHECK_EQUAL(play(randy9, smarty9, 9, 100)<=100, true);  // smarty should always win in at most 100 turns!
 		}
+		
+		
 		
 
     grade = testcase.grade();

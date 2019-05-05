@@ -42,11 +42,12 @@ void bullpgia::SmartGuesser:: learn(string solutions)
 void bullpgia::SmartGuesser:: startNewGame(uint length)
 {
     iterator=0;
-    count1=1;
+    count1=0;
     iterator1=0;
     succes=1;
     four=false;
     length1=length;
+    SmartGuess = "";
 
 }
 
