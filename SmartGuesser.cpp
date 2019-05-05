@@ -7,7 +7,7 @@ void bullpgia::SmartGuesser:: learn(string solutions)
 {
      bullSol = atoi(&solutions[0]);
      pgiaSol = atoi(&solutions[1]);
-   if(count1<10 && iterator<4)
+   if(count1<10 && iterator<length1)
    {
        
         for(size_t i = 0; i < bullSol; i++)
@@ -25,12 +25,10 @@ void bullpgia::SmartGuesser:: learn(string solutions)
            SmartGuess = SmartGuess + to_string(arrGuess[iterator1]);
            succes++;
            iterator1 = 0;
-                   cout<<"asdasd"<<succes<<"gal"<<endl;
 
        }
        else
        {
-         cout<<"iterator1:"<<iterator1<<"gal"<<endl;
 
         if(four == true)
             {
@@ -50,70 +48,48 @@ void bullpgia::SmartGuesser:: startNewGame(uint length)
     iterator1=0;
     succes=1;
     four=false;
+    length1=length;
+
 }
 
 string bullpgia::SmartGuesser:: guess()
 {   
-    switch (count1)
-    {
-        case 1:
-            return "1111";
-            break;
-        case 2:
-            return "2222";
-            break;
-        case 3:
-            return "3333";
-            break;
-        case 4:
-            return "4444";
-            break;
-        case 5:
-            return "5555";
-            break;
-        case 6:
-            return "6666";
-            break;
-        case 7:
-            return "7777";
-            break;
-        case 8:
-            return "8888";
-            break;
-        case 9:
-            return "9999";
-        case 10:
-    
-        int ch='g';
-                                  cout<<"iterator1:"<<iterator1<<"oria"<<endl;
-
-        cout<<"last sucess"<<succes<<"roi"<<endl;
-            if(iterator1<4){
-             ch = arrGuess[iterator1];
-
-            }
-            
-            switch(succes)
-            { 
-                case  1:
-                    return to_string(ch)+"***";
-                    break;
-                case 2:
-                    return "*"+to_string(ch)+"**";
-                    break;
-                case 3:
-                    return "**"+to_string(ch)+"*";
-                    break;
-                case 4:
-                    return "***"+to_string(ch);
-                    break;
-                case 5:
-                cout<<"win"<<endl;
-                    return SmartGuess;
-                    break;
-            }
+     string sg="";
+     if(count1<10)
+     {
+        for(int i=1;i<=length1;i++)
+         {
+        sg=sg+to_string(count1);
+         }
+     }
+     else if(succes<=length1)
+     {
+          int ch='g';
+          if(iterator1<length1)
+              {
+               ch = arrGuess[iterator1];
+              }
+          for(int i=1;i<=length1;i++)
+              {      
+             if(succes==i)
+                {
+                 sg=sg+to_string(ch);
+                }
+             else
+             {
+                 sg=sg+"*";
+             }
+             }
+     }
+     else {
+         return SmartGuess;
+     }
+        return sg;
+       
+          
         
     }
     
-    return "1234";
-}
+
+
+

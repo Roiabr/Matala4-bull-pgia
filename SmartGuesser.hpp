@@ -15,7 +15,7 @@ namespace bullpgia{
     string Guess;
 
     public :
-    uint length;
+    uint length1;
 
     int count1;
     string SmartGuess;
