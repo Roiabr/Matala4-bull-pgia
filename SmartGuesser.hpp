@@ -14,8 +14,9 @@ namespace bullpgia{
     string Guess;
 
     public :
-    uint length;
-    int turns;
+    uint length1;
+
+    int count1;
     string SmartGuess;
     int iterator;
     int iterator1;
@@ -31,7 +32,7 @@ namespace bullpgia{
     SmartGuesser(const string& str)
     {
        Guess = str;
-       turns=1;
+       count1=1;
        iterator=0;
        iterator1=0;
        bullSol=0;
