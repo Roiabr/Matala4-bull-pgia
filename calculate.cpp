@@ -4,7 +4,7 @@
 using namespace std;
 
 string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
-  string tempguess=guess;
+    string tempguess=guess;
     string tempchoice=choice;  
     int bull=0;
     int pgia=0;
@@ -19,7 +19,7 @@ string bullpgia::calculateBullAndPgia(const string& choice,const string& guess){
       }
 
     }
-    if(tempchoice.length()>0)
+    if(tempchoice.length() > 0)
     {
         for(size_t i = 0; i < tempchoice.length(); i++)
           {
