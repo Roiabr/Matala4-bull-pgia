@@ -6,10 +6,10 @@
 using namespace std;
 // using namespace bullpgia;
 
-namespace bullpgia{
-      
-
-  class SmartGuesser: public bullpgia::Guesser{
+namespace bullpgia
+{
+  class SmartGuesser: public bullpgia::Guesser
+  {
     private :
     string Guess;
 
@@ -22,15 +22,16 @@ namespace bullpgia{
     int iterator1;
     int bullSol;
     int succes;
-    int arrGuess[10];
+    int arrGuess[15];
     bool four;
- 
+    
+    
 
     
   /////////counstractors/////////////
-    SmartGuesser(){}
-    SmartGuesser(const string& str)
+   SmartGuesser(const string& str)
     {
+       
        Guess = str;
        count1=0;
        iterator=0;
@@ -40,7 +41,8 @@ namespace bullpgia{
        SmartGuess = "";
        four = false;
     }
-
+    SmartGuesser(): SmartGuesser("") {}
+ 
     ///////////methods//////////////////
     void learn(string solutions) override;
     string guess() override;

@@ -3,10 +3,16 @@
 
 using namespace std;
  
+/**
+	 * run a learn 
+	 * @param chooser the player who chooses the secret string.
+	 *
+	 * @return the number of turns it took guesser to guess the string chosen by chooser.
+	 *  
+	 */ 
 void bullpgia::SmartGuesser:: learn(string solutions) 
-{
-     bullSol = atoi(&solutions[0]);
-    //  pgiaSol = atoi(&solutions[1]);
+{ 
+   bullSol = atoi(&solutions[0]);
    if(count1<10 && iterator<length1)
    {
         for(size_t i = 0; i < bullSol; i++)
@@ -15,7 +21,6 @@ void bullpgia::SmartGuesser:: learn(string solutions)
             iterator++; 
         } 
            count1++;
-  
    }
    else 
    {   
@@ -25,16 +30,11 @@ void bullpgia::SmartGuesser:: learn(string solutions)
            SmartGuess = SmartGuess + to_string(arrGuess[iterator1]);
            succes++;
            iterator1 = 0;
-
        }
        else
        {
-
-        if(four == true)
-            {
-        iterator1++;
-            }
-            four=true;
+        if(four == true){iterator1++;}
+       four=true;
        }
    }
 }
@@ -48,7 +48,7 @@ void bullpgia::SmartGuesser:: startNewGame(uint length)
     four=false;
     length1=length;
     SmartGuess = "";
-
+   
 }
 
 string bullpgia::SmartGuesser:: guess()
@@ -57,9 +57,7 @@ string bullpgia::SmartGuesser:: guess()
      if(count1<10)
      {
         for(int i=1;i<=length1;i++)
-         {
-        sg=sg+to_string(count1);
-         }
+           {sg=sg+to_string(count1);}
      }
      else if(succes<=length1)
      {
@@ -70,23 +68,14 @@ string bullpgia::SmartGuesser:: guess()
               }
           for(int i=1;i<=length1;i++)
               {      
-             if(succes==i)
-                {
-                 sg=sg+to_string(ch);
-                }
-             else
-             {
-                 sg=sg+"*";
-             }
-             }
-     }
-     else {
-         return SmartGuess;
-     }
-        return sg;
-       
-          
-        
+             if(succes==i){sg=sg+to_string(ch);}
+             else{sg=sg+"*";}
+              }
+      }
+      else {
+         return SmartGuess; 
+      }
+     return sg; 
     }
     
 
